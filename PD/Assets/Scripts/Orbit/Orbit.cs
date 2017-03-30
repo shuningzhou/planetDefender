@@ -23,8 +23,27 @@ public class Orbit : MonoBehaviour {
 
 	void spawnSatellites ()
 	{
-		Satellite s = Instantiate (satellite1).GetComponent<Satellite>();
+		Satellite s = Instantiate (satellite1, new Vector2 (0, radius), Quaternion.identity).GetComponent<Satellite>();
 		s.orbit = this;
 		satellites.Add (s);
+	}
+
+	public Satellite addSatellite()
+	{
+		Satellite s = Instantiate (satellite1, new Vector2 (0, radius), Quaternion.identity).GetComponent<Satellite>();
+		s.orbit = this;
+		satellites.Add (s);
+		s.editing = true;
+		return s;
+	}
+
+	public void enterAddMode()
+	{
+		line.showCanAdd ();
+	}
+
+	public void enterNormalMode()
+	{
+		line.showNormal ();
 	}
 }

@@ -36,12 +36,13 @@ public class DrawLine : MonoBehaviour {
 
 	public void setColor(Color c1, Color c2)
 	{
-		lineRenderer.SetColors(c1, c2);
+		lineRenderer.startColor = c1;
+		lineRenderer.endColor = c2;
 	}
 
 	public void setWidth(float width)
 	{
-		lineRenderer.SetWidth (width, width);
-		
+		lineRenderer.startWidth = width;
+		lineRenderer.endWidth = width;
 	}
 }

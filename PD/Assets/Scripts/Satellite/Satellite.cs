@@ -15,14 +15,19 @@ public class Satellite : MonoBehaviour {
 
 	public GameObject currentTarget;
 
+	public bool editing = false;
+
 	// Use this for initialization
 	void Start () {
-		gameObject.transform.position = new Vector2 (0, orbit.radius);
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
+		if (editing) {
+			return;
+		}
+
 		if (!isAttacking) 
 		{
 			rotate (Time.deltaTime * rotationSpeed);

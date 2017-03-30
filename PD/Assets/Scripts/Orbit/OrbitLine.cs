@@ -26,13 +26,16 @@ public class OrbitLine : MonoBehaviour {
 		
 	}
 
-	void showCanAdd()
+	public void showCanAdd()
 	{
+		print (addColor);
+		print (addWidth);
+
 		drawLine.setColor (addColor, addColor);
 		drawLine.setWidth (addWidth);
 	}
 
-	void showNormal()
+	public void showNormal()
 	{
 		drawLine.setColor (normalColor, normalColor);
 		drawLine.setWidth (normalWidth);
