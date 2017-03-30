@@ -24,7 +24,7 @@ public class EnemyMovement : MonoBehaviour {
 		Rigidbody2D rb = GetComponent<Rigidbody2D>();
 		rb.velocity = norm * speed;
 
-		rb.angularVelocity = Random.Range (-spinRandomSeed, spinRandomSeed);
+		//rb.angularVelocity = Random.Range (-spinRandomSeed, spinRandomSeed);
 
 		//		Invoke ("addTrail", 4);
 

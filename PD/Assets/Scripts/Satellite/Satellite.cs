@@ -17,7 +17,7 @@ public class Satellite : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		gameObject.transform.position = new Vector2 (0, orbit.distance);
+		gameObject.transform.position = new Vector2 (0, orbit.radius);
 	}
 	
 	// Update is called once per frame
@@ -82,14 +82,21 @@ public class Satellite : MonoBehaviour {
 		{
 			return;
 		}
-
-		if (enemies.Last ()) {
-			currentTarget = enemies.Last ();
+			
+		float distance = 10000;
+		GameObject closest = null;
+		foreach (GameObject go in enemies) 
+		{
+			if (go) {
+				float thisDistance = Vector2.Distance (go.transform.position, gameObject.transform.position);
+				if (thisDistance < distance) 
+				{
+					closest = go;
+				}
+			}
 		}
-//		foreach (GameObject go in enemies) 
-//		{
-//			currentTarget = go;
-//		}
+
+		currentTarget = closest;
 	}
 
 	void attack()

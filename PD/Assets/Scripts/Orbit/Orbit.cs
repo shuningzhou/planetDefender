@@ -6,9 +6,10 @@ public class Orbit : MonoBehaviour {
 
 	public float capacity;
 	public List<Satellite> satellites = new List<Satellite> ();
-	public float distance = 10;
+	public float radius = 10;
 
 	public GameObject satellite1;
+	public OrbitLine line;
 
 	// Use this for initialization
 	void Start () {

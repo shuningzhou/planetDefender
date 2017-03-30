@@ -7,7 +7,7 @@ public class Missle : CanDestroy {
 	public Damage damage;
 	public float speed;
 	public GameObject target;
-	public Vector2 currentDirection;
+	public Vector2 currentDirection = new Vector2(0, -0.1f);
 	public bool isFree = false;
 
 	// Update is called once per frame

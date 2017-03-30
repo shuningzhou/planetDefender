@@ -33,4 +33,15 @@ public class DrawLine : MonoBehaviour {
 	{
 		points = null;
 	}
+
+	public void setColor(Color c1, Color c2)
+	{
+		lineRenderer.SetColors(c1, c2);
+	}
+
+	public void setWidth(float width)
+	{
+		lineRenderer.SetWidth (width, width);
+		
+	}
 }
